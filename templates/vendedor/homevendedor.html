@@ -4,121 +4,60 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="homevendedor.css" />
+    <title>Vendedorcito | Home</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
-    <script src="/proyectoingweb2024-1/Sheyla/vendedor.js" defer></script>
+    
+    <!-- * propio -->
+    <link rel="stylesheet" href="/static/css/vendedor/homevendedor.css"/>
+    <script src="/static/js/vendedor/vendedor.js" defer></script>
   </head>
   <body>
     <div class="container">
-      <div class="navegation">
-        <div class="userlogin">
-          <div class="profileuser"></div>
-          <div class="nombreuser">
-            andres pollito
-            <div class="cargo">vendedor</div>
-          </div>
-        </div>
-       
-        <div class="navegationcontet">
-
-          <a class="intemnavegation" id="home" href="/proyectoingweb2024-1/Sheyla/homevendedor.html">
-            <img
-              class="imgnav"
-              src="/proyectoingweb2024-1/imagenes/home.png"
-              alt=""
-            />
-            <label>Home</label>
-          </a>
-        
-
-          <a class="intemnavegation" , id="productos" href="/proyectoingweb2024-1/Sheyla/productosvendedor.html">
-            <img
-              class="imgnav"
-              src="/proyectoingweb2024-1/imagenes/productos.png"
-              alt=""
-            />Productos
-          </a>
-
-          <a class="intemnavegation" , id="cliente" href="/proyectoingweb2024-1/Sheyla/clientesvendedor.html">
-            <img
-              class="imgnav"
-              src="/proyectoingweb2024-1/imagenes/perfil.png"
-              alt=""
-            />Cliente
-          </a>
-
-          <a class="intemnavegation" , id="cotizaciones" href="/proyectoingweb2024-1/Sheyla/cotizacionesvendedor.html">
-            <img
-              class="imgnav"
-              src="/proyectoingweb2024-1/imagenes/cotizaciones.png"
-              alt=""
-            />Cotizaciones
-          </a>
-
-          <a class="intemnavegation" , id="informes" href="/proyectoingweb2024-1/Sheyla/informesvendedor.html">
-            <img
-              class="imgnav"
-              src="/proyectoingweb2024-1/imagenes/informes.png"
-              alt=""
-            />Informes
-          </a>
-
-        </div>
-
-        <div class="intemnavegation" id="configuracion">
-          <img
-            class="imgnav"
-            src="/proyectoingweb2024-1/imagenes/config.png"
-            alt=""
-          />configuration
-        </div>
-      </div>
+      {% include 'vendedor/barra-nav-izq.html' %}
 
       <div class="maincontent">
         <div class="welcomcontainer">
         <div class="welcom">
-           <div id="txtcontainer">
+          <div id="txtcontainer">
               <div class="fecha">
                 <i class="fa fa-calendar-alt"></i>
                 <span class="fecha-text">15 de abril de 2024</span>
               </div>
               <div id="mensajebienvenida">bienvenido andres pollito</div>
-           </div>
+          </div>
           <div id="imagecontainer">
-            <img id="logo" src="/proyectoingweb2024-1/imagenes/imagenes.png" alt="">
+            <img id="logo" src="/static/imgs/vendedor/imagenes.png" alt="">
           </div>
         </div>
       </div>
-         
+        
           <div class="panel">
             <div class="accesorapido">
               <a class="griditem" href="/proyectoingweb2024-1/Sheyla/productosvendedor.html">
               <div class="botonaccess" id="botonproduct">
                 <div class="imgcontainer">
                 <img id="imagenitem"
-                  src="/proyectoingweb2024-1/imagenes/productboton.png"
+                  src="/static/imgs/vendedor/productboton.png"
                   alt=""
                 />
               </div>
                 <div class="txboton">Productos</div>
               </div>
-             
+            
             </a>
 
               <a class="griditem" href="/proyectoingweb2024-1/Sheyla/clientesvendedor.html">
               <div class="botonaccess" id="botonusuario">
                 <div class="imgcontainer">
                 <img id="imagenitem"
-                  src="/proyectoingweb2024-1/imagenes/usuariosboton.png"
+                  src="/static/imgs/vendedor/usuariosboton.png"
                   alt=""
                 />
               </div>
@@ -130,7 +69,7 @@
               <div class="botonaccess" id="botoninformes">
                 <div class="imgcontainer">
                 <img id="imagenitem"
-                  src="/proyectoingweb2024-1/imagenes/informesboton.png"
+                  src="/static/imgs/vendedor/informesboton.png"
                   alt=""
                 />
               </div>
@@ -142,7 +81,7 @@
               <div class="botonaccess" id="botoncotizaciones">
                 <div class="imgcontainer">
                 <img id="imagenitem"
-                  src="/proyectoingweb2024-1/imagenes/cotizacionesnboton.png"
+                  src="/static/imgs/vendedor/cotizacionesnboton.png"
                   alt=""
                 />
               </div>
