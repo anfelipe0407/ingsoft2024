@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="navegation">
+    <div class="userlogin"></div>
+    <div class="navegationcontet"></div>
+    <div class="configuration"></div>
+  </div>
+  <div class="panel">
+    <div class="welcom"></div>
+    <div class="panel2">
+      <div class="accesorapido"></div>
+      <div class="calaendary"></div>
+    </div>
+  </div>
+</div>
