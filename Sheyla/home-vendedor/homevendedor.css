@@ -34,6 +34,9 @@ font-family: "Inter", sans-serif;
   width: 100%;
   flex-direction: column;
   font-size: 13px;
+  -webkit-box-shadow: 7px 2px 9px -1px rgba(0,0,0,0.34);
+-moz-box-shadow: 7px 2px 9px -1px rgba(0,0,0,0.34);
+box-shadow: 7px 2px 9px -1px rgba(0,0,0,0.34);
 
 }
 
@@ -41,6 +44,7 @@ font-family: "Inter", sans-serif;
   margin-top: 10px;
   height: 100%;
   width: 100%;
+
 }
 
 .maincontent {
@@ -50,6 +54,7 @@ font-family: "Inter", sans-serif;
   height: 100%;
   width: 100%;
   border: 5cap;
+
 }
 
 
@@ -85,6 +90,7 @@ font-family: "Inter", sans-serif;
   background-color: #38B6A0;
   color: #fff;
   border-radius: 5px;
+
 }
 
 .weekdays {
@@ -117,9 +123,6 @@ color: wheat;
 border-radius: 50%;
 background-image: url(https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_1280.png);
 height: 45%;
-
-
-
 }
 .nombreuser{
   color: aliceblue;
@@ -150,7 +153,10 @@ height: 45%;
 
   text-align: left;
   align-items:center ;
-   
+    text-decoration: none;
+}
+.intemnavegation:hover {
+background-color: #09314b;
 }
 
 #home{
@@ -182,7 +188,9 @@ background-color:#38B6A0;
   grid-template-columns: 85% 15%;
   box-sizing: border-box;
   grid-template-columns: 70% 30%;
-
+  -webkit-box-shadow: 7px 10px 28px -8px rgba(0,0,0,0.45);
+-moz-box-shadow: 7px 10px 28px -8px rgba(0,0,0,0.45);
+box-shadow: 7px 10px 28px -8px rgba(0,0,0,0.45);
 }
 
 
@@ -200,20 +208,26 @@ background-color:#38B6A0;
 .griditem{
   padding: 50px 40px;
   padding-bottom:10%;
+text-decoration: none;
 }
+
 .botonaccess{
   display: grid;
   border-radius: 10px;
-  border-style: ridge;
+  border-style: none;
   width: 100%;
   height: 100%;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 40% 60%;
   align-items: center;
  color: white;
+ -webkit-box-shadow: 7px 10px 28px 0px rgba(0,0,0,0.31);
+ -moz-box-shadow: 7px 10px 28px 0px rgba(0,0,0,0.31);
+ box-shadow: 7px 10px 28px 0px rgba(0,0,0,0.31);
 }
 #imagenitem{
 width: 30px;
 height: 30px;
+
 }
 .imgcontainer{
   display: flex;
@@ -221,10 +235,10 @@ height: 30px;
   align-items: center;
   background-color: #ffffff;
   border-radius: 50%; 
-  width: 70%;
+  width: 60%;
   height: 40%;  
   align-items: center;
-  margin-left: 8px;
+  margin-left: 25px;
   border-style: none;
 
 }
@@ -242,6 +256,7 @@ height: 30px;
 }
 .welcomcontainer{
   padding: 20px 20px;
+
 }
 #txtcontainer{
   display: grid;

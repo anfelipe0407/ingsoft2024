@@ -1,14 +1,53 @@
-<div class="container">
-  <div class="navegation">
-    <div class="userlogin"></div>
-    <div class="navegationcontet"></div>
-    <div class="configuration"></div>
-  </div>
-  <div class="panel">
-    <div class="welcom"></div>
-    <div class="panel2">
-      <div class="accesorapido"></div>
-      <div class="calaendary"></div>
-    </div>
-  </div>
-</div>
+.container {  display: grid;
+  grid-template-columns: 0.4fr 1.3fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "navegation panel";
+}
+
+.navegation {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.6fr 1.9fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "userlogin"
+    "navegationcontet"
+    "configuration";
+  grid-area: navegation;
+}
+
+.userlogin { grid-area: userlogin; }
+
+.navegationcontet { grid-area: navegationcontet; }
+
+.configuration { grid-area: configuration; }
+
+.panel {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.3fr 1.7fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "navetabs"
+    "ingresoproductos";
+  grid-area: panel;
+}
+
+.navetabs { grid-area: navetabs; }
+
+.ingresoproductos {  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "formproducts codigobarras";
+  grid-area: ingresoproductos;
+}
+
+.codigobarras { grid-area: codigobarras; }
+
+.formproducts { grid-area: formproducts; }
