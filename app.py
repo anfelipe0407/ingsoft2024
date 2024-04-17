@@ -3,10 +3,23 @@ from flask import Flask, render_template, request, json, jsonify
 app = Flask(__name__)
 
 @app.route('/vendedor', methods=['GET'])
-def index():
+def home_vendedor():
     return render_template("vendedor/homevendedor.html")
-
+@app.route('/vendedor/productos', methods=['GET'])
+def productos_vendedor():
+    return render_template("vendedor/productosvendedor.html")
+@app.route('/vendedor/cliente', methods=['GET'])
+def clientes_vendedor():
+    return render_template("vendedor/clientesvendedor.html")
+@app.route('/vendedor/cotizaciones', methods=['GET'])
+def cotizaciones_vendedor():
+    return render_template("vendedor/cotizacionesvendedor.html")
+@app.route('/vendedor/informes', methods=['GET'])
+def informes_vendedor():
+    return render_template("vendedor/informesvendedor.html")
 # ! RUTA SHEYLA
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
