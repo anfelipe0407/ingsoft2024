@@ -17,7 +17,7 @@ def cotizaciones_vendedor():
 @app.route('/vendedor/informes', methods=['GET'])
 def informes_vendedor():
     return render_template("vendedor/informesvendedor.html")
-# ! RUTA SHEYLA
+# ! RUTA GUSTAVO
 
 
 
