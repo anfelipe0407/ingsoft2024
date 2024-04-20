@@ -71,3 +71,32 @@ document.getElementById("nextMonth").addEventListener("click", function() {
     }
     updateCalendar(currentMonth, currentYear);
 });
+
+//paginacion
+const productos = document.querySelectorAll('.producto');
+const productosPorPagina = 3; // Número de productos por página
+const numPaginas = Math.ceil(productos.length / productosPorPagina);
+
+function mostrarProductos(pagina) {
+    const inicio = (pagina - 1) * productosPorPagina;
+    const fin = inicio + productosPorPagina;
+
+    productos.forEach((producto, index) => {
+        if (index >= inicio && index < fin) {
+            producto.style.display = 'block';
+        } else {
+            producto.style.display = 'none';
+        }
+    });
+}
+
+mostrarProductos(1); // Mostrar la primera página por defecto
+
+// Crear botones de paginación
+const paginacion = document.getElementById('paginacion');
+for (let i = 1; i <= numPaginas; i++) {
+    const boton = document.createElement('button');
+    boton.innerText = i;
+    boton.addEventListener('click', () => mostrarProductos(i));
+    paginacion.appendChild(boton);
+}

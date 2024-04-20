@@ -1,9 +1,10 @@
+
 .navegation {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 20% 60% 20%;
     background-color: #031D2E;
-    height: 100%;
+    height: 100vh;
     width: 100%;
   }
   .userlogin {
@@ -17,7 +18,6 @@
     display: flex;
     border-bottom: 1px solid white;
     border-top: 1px solid white;
-    height: 100%;
     width: 100%;
     flex-direction: column;
     font-size: 13px;
@@ -27,10 +27,11 @@
   
   }
   
-  .configuration {
-    margin-top: 10px;
+  #configuracion {
     height: 100%;
     width: 100%;
+    margin-bottom: 0%;
+    margin-top: 0%;
   
   }
   .accesorapido {
@@ -69,7 +70,7 @@
       height: 100%;
     
       box-sizing: border-box;
-      margin: 8% 2% 2%;
+      margin: 8% 2% 2% 0%;
       color: azure;
     
       display: grid;
@@ -79,7 +80,8 @@
     
       text-align: left;
       align-items:center ;
-        text-decoration: none;
+        
+      text-decoration: none;
     }
     .intemnavegation:hover {
     background-color: #09314b;
@@ -91,3 +93,4 @@
       margin-left: 15px;
       box-sizing: border-box;
     }
+    
