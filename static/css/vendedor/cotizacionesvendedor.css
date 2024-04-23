@@ -16,3 +16,32 @@ body{
   #cotizaciones{
     background-color: #38b6a0;
   }
+.container-listado-cotizaciones{
+width: 100%;
+height: 100%;
+display: grid;
+grid-template-rows: 25% auto;
+}
+.hacercotizacion-nav{
+padding-top: 6%;
+padding-left: 10%;
+padding-right: 10%;
+width: auto;
+}
+
+/* tabla */
+.tablacotizacion {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.tablacotizacion td, .tablacotizacion th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tablacotizacion tr:last-child td {
+  border-bottom: none;
+}

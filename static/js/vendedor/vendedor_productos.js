@@ -131,3 +131,22 @@ const botonespaginacion=document.querySelector('#pagination-buttons')
 
   generarBotonesPaginacion();
 });
+
+
+// generar codigo de barras
+
+document.getElementById('generarcod').addEventListener('click', function() {
+    const codigo = document.getElementById('codigoInput').value;
+    generarCodigoDeBarras(codigo);
+});
+
+
+function generarCodigoDeBarras(codigo) {
+    JsBarcode("#codigoDeBarras")
+        .options({font: "OCR-B"}) // Aplicar la fuente OCR-B
+        .EAN13(codigo, {fontSize: 18, textMargin: 0})
+        .blank(20) // Crear espacio entre los códigos de barras
+        .render();
+
+
+}
