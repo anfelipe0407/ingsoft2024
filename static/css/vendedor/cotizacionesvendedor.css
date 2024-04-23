@@ -1,0 +1,18 @@
+body{
+  background-color: #f0ebeb;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  
+  }
+.main-container {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    border: 5cap;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  #cotizaciones{
+    background-color: #38b6a0;
+  }
