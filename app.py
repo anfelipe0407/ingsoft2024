@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, json, jsonify
 
 app = Flask(__name__)
 
+# ! RUTA SHEYLA
 @app.route('/vendedor', methods=['GET'])
 def home_vendedor():
     return render_template("vendedor/homevendedor.html")
@@ -19,7 +20,10 @@ def informes_vendedor():
     return render_template("vendedor/informesvendedor.html")
 # ! RUTA GUSTAVO
 
-
+# ! RUTA AGUILAR
+@app.route('/empresa', methods=['GET'])
+def home_empresa():
+    return render_template("empresa/homeempresa.html")
 
 
 if __name__ == '__main__':
