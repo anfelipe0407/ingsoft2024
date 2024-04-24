@@ -21,6 +21,8 @@ width: 100%;
 height: 100%;
 display: grid;
 grid-template-rows: 25% auto;
+padding-left: 7%;
+padding-right: 7%
 }
 .hacercotizacion-nav{
 padding-top: 6%;
@@ -34,6 +36,7 @@ width: auto;
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #ddd;
+ 
 }
 
 .tablacotizacion td, .tablacotizacion th {

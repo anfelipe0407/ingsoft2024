@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/static/css/vendedor/hacercotizaciones.css">
+    <link rel="stylesheet" href="/static/css/vendedor/barra-nav-izq.css">
+    <script src="/static/js/vendedor/vendedor_hacercotizaciones.js"defer></script>
+    <script>
+        const stepper = document.querySelector('#stepper');
+        new CDB.Stepper(stepper);
+      </script>
+</head>
+<body>
+    <div class="main-container">
+        {% include 'vendedor/barra-nav-izq.html' %}
+    
+        <div class="container-listado-cotizaciones">
+        
+    </div> 
+</body>
+</html>
