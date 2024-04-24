@@ -18,6 +18,11 @@ def cotizaciones_vendedor():
 @app.route('/vendedor/informes', methods=['GET'])
 def informes_vendedor():
     return render_template("vendedor/informesvendedor.html")
+@app.route('/vendedor/hacercotizaciones', methods=['GET'])
+def hacercotizaciones_vendedor():
+    return render_template("/vendedor/hacercotizacionesvendedor.html")
+
+
 # ! RUTA GUSTAVO
 
 # ! RUTA AGUILAR

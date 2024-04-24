@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="/static/css/vendedor/hacercotizaciones.css">
+    <link rel="stylesheet" href="/static/css/vendedor/barra-nav-izq.css">
+    <script src="/static/js/vendedor/vendedor_hacercotizaciones.js" defer></script>
+   
+   
+</head>
+<body>
+    <div class="main-container">
+        {% include 'vendedor/barra-nav-izq.html' %}
+    
+        <div class="container-hacer-cotizaciones">
+            
+            <h2 id="textcotizacion"><strong>Hacer nueva cotización</strong></h2>
+            <div class="stepper">
+                <div class="step active" onclick="showStep(1)">1</div>
+                <div class="step" onclick="showStep(2)">2</div>
+                <div class="step" onclick="showStep(3)">3</div>
+              </div>
+              
+              <div id="step1" class="step-content active">
+                Contenido del Paso 1
+              </div>
+              
+              <div id="step2" class="step-content">
+                Contenido del Paso 2
+              </div>
+              
+              <div id="step3" class="step-content">
+                Contenido del Paso 3
+              </div>
+              
+        </div> 
+</body>
+</html>
