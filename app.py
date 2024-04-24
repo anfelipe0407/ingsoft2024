@@ -26,21 +26,42 @@ def hacercotizaciones_vendedor():
 # ! RUTA GUSTAVO
 
 # ! RUTA AGUILAR
+# * home
 @app.route('/empresa', methods=['GET'])
-def home_empresa():
+def empresa_home():
     return render_template("empresa/homeempresa.html")
 
+# * Configuracion
 @app.route('/empresa/configuracion', methods=['GET'])
-def config_empresa():
+def empresa_config():
     return render_template("empresa/empresa-configuracion.html")
 
+# * Inventario
 @app.route('/empresa/inventario', methods=['GET'])
-def inventario_empresa():
+def empresa_inventario():
     return render_template("empresa/empresa-inventario.html")
 
 @app.route('/empresa/inventario/crear', methods=['GET'])
-def inventario_empresa_crear():
+def empresa_inventario_crear():
     return render_template("empresa/empresa-inventario-crear.html")
+
+# * Ordenes de compra
+@app.route('/empresa/ordenes', methods=['GET'])
+def empresa_ordenes():
+    return render_template("empresa/empresa-ordenes.html")
+
+@app.route('/empresa/ordenes/nueva', methods=['GET'])
+def empresa_ordenes_nueva():
+    return render_template("empresa/empresa-ordenes-nueva.html")
+
+@app.route('/empresa/ordenes/ver', methods=['GET'])
+def empresa_ordenes_ver():
+    return render_template("empresa/empresa-ordenes-ver.html")
+
+# * Provedores
+@app.route('/empresa/provedores', methods=['GET'])
+def empresa_provedores():
+    return render_template("empresa/empresa-provedores.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

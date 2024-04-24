@@ -42,7 +42,10 @@
             </div>
         </a>
 
-        <a class="nav-menu-item">
+        <a
+            href="/empresa/ordenes"
+            class="nav-menu-item {% if activo == 'ordenes' %}active{% endif %}"
+        >
             <div class="icono-left-menu-item">
                 <i class="fas fa-credit-card"></i>
             </div>
@@ -54,7 +57,10 @@
             </div>
         </a>
 
-        <a class="nav-menu-item">
+        <a
+            href="/empresa/provedores"
+            class="nav-menu-item {% if activo == 'provedores' %}active{% endif %}"
+        >
             <div class="icono-left-menu-item">
                 <i class="fas fa-calculator"></i>
             </div>

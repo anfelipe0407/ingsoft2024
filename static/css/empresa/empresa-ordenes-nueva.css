@@ -65,33 +65,67 @@ html, body {
     /* background-color: red; */
 }
 
-.inventario-wrapper{
-    width: 100%;
-    height: 100%;
 
+/* ! ORDENES */
+.main-wrapper-nueva-orden{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 50% 50%;
 
-    gap: 10px;
-}
-
-.inventario-wrapper .card{
+    height: 100%;
     width: 100%;
-    height: fit-content;
+
+    box-sizing: border-box;
+    /* padding: 2%; */
 }
 
-.inventario-wrapper .card .card-body{
+/* * LEFT SIDE */
+.main-wrapper-nueva-orden .left-wrapper-orden{
+    height: 100%;
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.inventario-wrapper .card img{
-    max-width: 100%;
-    max-height: 100%;
+.left-wrapper-orden h2{
+    width: 100%;
+}
 
-    padding: 15px;
-    box-sizing: border-box;
+.left-wrapper-orden .search-producto{
+    width: 100%;
+
+    display: flex;
+    gap: 5px;
+}
+
+.left-wrapper-orden .producto-list-wrapper{
+    width: 100%;
+}
+
+.left-wrapper-orden .producto-list-wrapper table{
+    width: 100%;
+}
+
+/* * RIGHT SIDE */
+.main-wrapper-nueva-orden .right-wrapper-orden{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-left: 1px solid black;
+    padding: 10px;
+}
+
+.right-wrapper-orden .productos-agregados-wrapper{
+    width: 100%;
+}
+
+.right-wrapper-orden .productos-agregados-wrapper table{
+    width: 100%;
 }
 
 
