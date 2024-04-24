@@ -24,6 +24,13 @@ def hacercotizaciones_vendedor():
 
 
 # ! RUTA GUSTAVO
+@app.route('/administrador', methods=['GET'])
+def administrador_home():
+    return render_template("administrador/administradorhome.html")
+
+@app.route('/administrador/empresas', methods=['GET'])
+def Empresas():
+    return render_template("administrador/empresas.html")
 
 # ! RUTA AGUILAR
 @app.route('/empresa', methods=['GET'])
