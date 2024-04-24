@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function showStep(step) {
   document.querySelectorAll('.step-content').forEach(content => {
     content.classList.remove('active');
@@ -9,3 +10,4 @@ function showStep(step) {
   });
   document.querySelector('.step:nth-child(' + step + ')').classList.add('active');
 }
+

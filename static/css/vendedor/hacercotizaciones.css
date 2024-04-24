@@ -16,6 +16,7 @@ body{
     #cotizaciones{
       background-color: #38b6a0;
     }
+<<<<<<< HEAD
     #textcotizacion{
       padding-left: 10%;
       font-size: xx-large;
@@ -167,3 +168,7 @@ table tbody tr:nth-child(even) {
    color: white;
   
   }
+=======
+    /* stepper */
+    
+>>>>>>> 37d04471aade9f849e10892c2b5058922a3937b2
