@@ -30,6 +30,17 @@ def hacercotizaciones_vendedor():
 def home_empresa():
     return render_template("empresa/homeempresa.html")
 
+@app.route('/empresa/configuracion', methods=['GET'])
+def config_empresa():
+    return render_template("empresa/empresa-configuracion.html")
+
+@app.route('/empresa/inventario', methods=['GET'])
+def inventario_empresa():
+    return render_template("empresa/empresa-inventario.html")
+
+@app.route('/empresa/inventario/crear', methods=['GET'])
+def inventario_empresa_crear():
+    return render_template("empresa/empresa-inventario-crear.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

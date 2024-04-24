@@ -12,8 +12,10 @@
 
     <div class="mid-container">
         <hr>
-
-        <div class="nav-menu-item active">
+        <a
+            href="/empresa"
+            class="nav-menu-item  {% if activo == 'home' %}active{% endif %}"
+        >
             <div class="icono-left-menu-item">
                 <i class="fas fa-home"></i>
             </div>
@@ -23,9 +25,12 @@
                     Home
                 </label>
             </div>
-        </div>
+        </a>
 
-        <div class="nav-menu-item">
+        <a
+            href="/empresa/inventario"
+            class="nav-menu-item {% if activo == 'inventario' %}active{% endif %}"
+        >
             <div class="icono-left-menu-item">
                 <i class="fas fa-boxes"></i>
             </div>
@@ -35,9 +40,9 @@
                     Inventario
                 </label>
             </div>
-        </div>
+        </a>
 
-        <div class="nav-menu-item">
+        <a class="nav-menu-item">
             <div class="icono-left-menu-item">
                 <i class="fas fa-credit-card"></i>
             </div>
@@ -47,9 +52,9 @@
                     Ordenes de compra
                 </label>
             </div>
-        </div>
+        </a>
 
-        <div class="nav-menu-item">
+        <a class="nav-menu-item">
             <div class="icono-left-menu-item">
                 <i class="fas fa-calculator"></i>
             </div>
@@ -59,9 +64,9 @@
                     Cotizaciones
                 </label>
             </div>
-        </div>
+        </a>
 
-        <div class="nav-menu-item">
+        <a class="nav-menu-item">
             <div class="icono-left-menu-item">
                 <i class="fas fa-truck"></i>
             </div>
@@ -71,13 +76,16 @@
                     Provedores
                 </label>
             </div>
-        </div>
+        </a>
 
         <hr>
     </div>
 
     <div class="bottom-container">
-        <div class="nav-menu-item">
+        <a
+            href="/empresa/configuracion"
+            class="nav-menu-item {% if activo == 'config' %}active{% endif %}"
+        >
             <div class="icono-left-menu-item">
                 <i class="fas fa-cog"></i>
             </div>
@@ -87,6 +95,6 @@
                     Configuracion
                 </label>
             </div>
-        </div>
+        </a>
     </div>
 </div>

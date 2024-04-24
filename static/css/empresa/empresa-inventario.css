@@ -1,0 +1,163 @@
+
+/* ! MAIN */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 18% 82%;
+
+    box-sizing: border-box;
+}
+
+.main-container .left-nav-wrapper{
+    width: 100%;
+    height: 100%;
+}
+.main-container .main-dashboard-empresa{
+    width: 100%;
+    height: 100%;
+}
+
+/* ! LEFT-NAV */
+.left-nav-wrapper{
+    background-color: red;
+}
+
+.main-dashboard-empresa{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 25% 75%;
+
+    overflow: scroll;
+}
+
+.main-dashboard-empresa .top-banner{
+    width: 100%;
+
+    padding: 10px 10%;
+    box-sizing: border-box;
+
+    /* background-color: red; */
+}
+
+.main-section-dashboard{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+    padding: 0 25px;
+    box-sizing: border-box;
+
+    /* background-color: red; */
+}
+
+.inventario-wrapper{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    gap: 10px;
+}
+
+.inventario-wrapper .card{
+    width: 100%;
+    height: fit-content;
+}
+
+.inventario-wrapper .card .card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inventario-wrapper .card img{
+    max-width: 100%;
+    max-height: 100%;
+
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* ! MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 555;
+    left: 0;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+
+    /* padding: 12%; */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.producto-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.producto-modal h3{
+    width: 100%;
+}
+
+.producto-modal .info-producto{
+    width: 100%;
+    font-size: 14px;
+}
+
+.producto-modal .img-container{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.producto-modal .img-container img{
+    width: 150px;
+    padding: 10px;
+}
+
+
