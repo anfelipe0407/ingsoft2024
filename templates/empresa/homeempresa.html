@@ -15,9 +15,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         
         <!-- * propio -->
+        <link rel="stylesheet" href="/static/css/empresa/colors.css">
+
         <link rel="stylesheet" href="/static/css/empresa/homeempresa.css">
         <link rel="stylesheet" href="/static/css/empresa/barra-nav-izq-empresa.css">
         <link rel="stylesheet" href="/static/css/empresa/big-banner-empresa.css">
+
+        <link rel="stylesheet" href="/static/css/empresa/calendario-empresa.css">
+        <script src="/static/js/empresa/empresa_calendario.js" defer></script>
 
         <!-- * Icono home -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -38,6 +43,112 @@
                 </div>
 
                 <div class="main-section-dashboard">
+                    <!-- ! OPCIONES -->
+                    <div class="opciones-wrapper">
+                        <div class="options-item-main-dashboard color1">
+                            <div class="icon-options-item">
+                                <i class="fas fa-cog"></i>
+                            </div>
+
+                            <div class="texto-options-item">
+                                Configuración e información general
+                            </div>
+                        </div>
+                        
+                        <div class="options-item-main-dashboard color2">
+                            <div class="icon-options-item">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+
+                            <div class="texto-options-item">
+                                Mis modulos
+                            </div>
+                        </div>
+
+                        <div class="options-item-main-dashboard color3">
+                            <div class="icon-options-item">
+                                <i class="fas fa-box"></i>
+                            </div>
+
+                            <div class="texto-options-item">
+                                Inventario
+                            </div>
+                        </div>
+
+                        <div class="options-item-main-dashboard color4">
+                            <div class="icon-options-item">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+
+                            <div class="texto-options-item">
+                                Ordenes de compra
+                            </div>
+                        </div>
+
+                        <div class="options-item-main-dashboard color5">
+                            <div class="icon-options-item">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+
+                            <div class="texto-options-item">
+                                Vendedores
+                            </div>
+                        </div>
+
+                        <div class="options-item-main-dashboard color1">
+                            <div class="icon-options-item">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+
+                            <div class="texto-options-item">
+                                Cotizaciones
+                            </div>
+                        </div>
+
+                        <div class="options-item-main-dashboard color6">
+                            <div class="icon-options-item">
+                                <i class="fas fa-building"></i>
+                            </div>
+
+                            <div class="texto-options-item">
+                                Empresas
+                            </div>
+                        </div>
+
+                        <div class="options-item-main-dashboard color7">
+                            <div class="icon-options-item">
+                                <i class="fas fa-truck"></i>
+                            </div>
+
+                            <div class="texto-options-item">
+                                Provedores
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ! CALENDARIO -->
+                    <div class="calendar-wrapper">
+                        <div class="calendar">
+                            <div class="navigation">
+                                <button id="prevMonth">&lt;</button>
+                                <h2 id="month-year"></h2>
+                                <button id="nextMonth">&gt;</button>
+                            </div>
+                
+                            <div class="weekdays">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+    
+                            <div class="days" id="days">
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
