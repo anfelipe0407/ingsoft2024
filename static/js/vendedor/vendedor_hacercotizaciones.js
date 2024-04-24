@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function showStep(step) {
   document.querySelectorAll('.step-content').forEach(content => {
     content.classList.remove('active');
