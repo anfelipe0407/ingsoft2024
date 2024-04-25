@@ -1,5 +1,5 @@
 body{
-    background-color: #f0ebeb;
+    background-color: #ffffff;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     
@@ -134,7 +134,7 @@ table tbody tr:nth-child(even) {
 
 .nav-buscar{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   gap: 20px;
   text-align: right;
   width: 80%;
@@ -193,7 +193,7 @@ table tbody tr:nth-child(even) {
 .card {
   display: flex;
  width: 800px;
-  max-height: 10px;
+  max-height: 100px;
   margin: 20px auto;
   border: 1px solid #fffcfc;
   border-radius: 8px;
