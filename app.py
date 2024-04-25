@@ -43,6 +43,11 @@ def empresa_home():
 def empresa_config():
     return render_template("empresa/empresa-configuracion.html")
 
+# * Mis modulos
+@app.route('/empresa/modulos', methods=['GET'])
+def empresa_modulos():
+    return render_template("empresa/empresa-mis-modulos.html")
+
 # * Inventario
 @app.route('/empresa/inventario', methods=['GET'])
 def empresa_inventario():
@@ -69,6 +74,23 @@ def empresa_ordenes_ver():
 @app.route('/empresa/provedores', methods=['GET'])
 def empresa_provedores():
     return render_template("empresa/empresa-provedores.html")
+
+@app.route('/empresa/provedores/crear', methods=['GET'])
+def empresa_provedores_crear():
+    return render_template("empresa/empresa-provedor-crear.html")
+
+@app.route('/empresa/provedores/ver', methods=['GET'])
+def empresa_provedores_ver():
+    return render_template("empresa/empresa-provedor-ver.html")
+
+# * Vendedores
+@app.route('/empresa/vendedores', methods=['GET'])
+def empresa_vendedores():
+    return render_template("empresa/empresa-vendedores.html")
+
+@app.route('/empresa/vendedores/crear', methods=['GET'])
+def empresa_vendedores_crear():
+    return render_template("empresa/empresa-vendedor-crear.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

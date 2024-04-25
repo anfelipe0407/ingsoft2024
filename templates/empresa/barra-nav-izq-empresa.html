@@ -58,8 +58,8 @@
         </a>
 
         <a
-            href="/empresa/provedores"
-            class="nav-menu-item {% if activo == 'provedores' %}active{% endif %}"
+            href="/empresa/cotizaciones"
+            class="nav-menu-item {% if activo == 'cotizaciones' %}active{% endif %}"
         >
             <div class="icono-left-menu-item">
                 <i class="fas fa-calculator"></i>
@@ -72,7 +72,10 @@
             </div>
         </a>
 
-        <a class="nav-menu-item">
+        <a
+            href="/empresa/provedores"
+            class="nav-menu-item {% if activo == 'provedores' %}active{% endif %}"
+        >
             <div class="icono-left-menu-item">
                 <i class="fas fa-truck"></i>
             </div>
@@ -80,6 +83,21 @@
             <div class="texto-left-menu-item">
                 <label>
                     Provedores
+                </label>
+            </div>
+        </a>
+
+        <a
+            href="/empresa/vendedores"
+            class="nav-menu-item {% if activo == 'vendedores' %}active{% endif %}"
+        >
+            <div class="icono-left-menu-item">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <div class="texto-left-menu-item">
+                <label>
+                    Vendedores
                 </label>
             </div>
         </a>
