@@ -61,6 +61,10 @@ def empresa_modulos():
 def empresa_inventario():
     return render_template("empresa/empresa-inventario.html")
 
+@app.route('/empresa/inventario/stock', methods=['GET'])
+def empresa_inventario_stock():
+    return render_template("empresa/empresa-inventario-stock.html")
+
 @app.route('/empresa/inventario/crear', methods=['GET'])
 def empresa_inventario_crear():
     return render_template("empresa/empresa-inventario-crear.html")
