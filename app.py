@@ -61,6 +61,16 @@ def modulos():
 def cliente_home():
     return render_template("cliente/cliente-home.html")
 
+# * facturas
+@app.route('/cliente/facturas', methods=['GET'])
+def cliente_facturas():
+    return render_template("cliente/cliente-facturas.html")
+
+# * cotizaciones
+@app.route('/cliente/cotizaciones', methods=['GET'])
+def cliente_cotizaciones():
+    return render_template("cliente/cliente-cotizaciones.html")
+
 
 # ! EMPRESA
 # * home
