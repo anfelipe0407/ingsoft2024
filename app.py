@@ -26,6 +26,9 @@ def informes_vendedor():
 @app.route('/vendedor/hacercotizaciones', methods=['GET'])
 def hacercotizaciones_vendedor():
     return render_template("/vendedor/hacercotizacionesvendedor.html")
+@app.route('/vendedor/vercotizacion', methods=['GET'])
+def empresa_ver_cotizacion():
+    return render_template("/vendedor/cotizacion-vendedor-ver.html")
 
 
 # ! RUTA GUSTAVO
@@ -71,6 +74,10 @@ def empresa_cotizaciones():
 def empresa_cotizaciones_crear():
     return render_template("empresa/empresa-cotizacion-crear.html")
 
+@app.route('/empresa/cotizaciones/ver', methods=['GET'])
+def empresa_cotizaciones_ver():
+    return render_template("empresa/empresa-cotizacion-ver.html")
+
 # * Ordenes de compra
 @app.route('/empresa/ordenes', methods=['GET'])
 def empresa_ordenes():
@@ -105,6 +112,13 @@ def empresa_vendedores():
 @app.route('/empresa/vendedores/crear', methods=['GET'])
 def empresa_vendedores_crear():
     return render_template("empresa/empresa-vendedor-crear.html")
+
+# * Informes
+
+@app.route('/empresa/informes', methods=['GET'])
+def empresa_informes():
+    return render_template("empresa/empresa-informes.html")
+
 
 # Manejar rutas no encontradas
 @app.errorhandler(404)

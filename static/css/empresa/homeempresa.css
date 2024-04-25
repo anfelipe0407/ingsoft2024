@@ -60,6 +60,8 @@ html, body {
     padding-left: 40px;
     box-sizing: border-box;
 
+    overflow: scroll;
+
     /* background-color: red; */
 }
 
@@ -71,8 +73,8 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    padding: 5%;
-    gap: 5%;
+    /* padding: 2%; */
+    gap: 3%;
 
     box-sizing: border-box;
 
