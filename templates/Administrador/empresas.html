@@ -27,7 +27,9 @@
   </head>
   <body>
     <div class="container">
-      {% include 'administrador/barra-de-navegacion.html' %}
+      {% with activo = 'empresas' %}
+          {% include 'administrador/barra-de-navegacion.html' %}
+      {% endwith %}
 
       <div class="maincontent">
         <div class="welcomcontainer">

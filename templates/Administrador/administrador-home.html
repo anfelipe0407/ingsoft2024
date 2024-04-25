@@ -30,7 +30,11 @@
   </head>
   <body>
     <div class="container">
-      {% include 'administrador/barra-de-navegacion.html' %}
+      <div class="left-nav-wrapper">
+        {% with activo = 'home' %}
+          {% include 'administrador/barra-de-navegacion.html' %}
+        {% endwith %}
+    </div>
 
       <div class="maincontent">
         <div class="welcomcontainer">

@@ -32,7 +32,9 @@
   </head>
   <body>
     <div class="container-main">
-      {% include 'administrador/barra-de-navegacion.html' %}
+      {% with activo = 'administrador' %}
+          {% include 'administrador/barra-de-navegacion.html' %}
+      {% endwith %}
 
       <div class="maincontent">
         <div class="welcomcontainer">
