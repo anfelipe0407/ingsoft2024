@@ -227,38 +227,44 @@ html, body {
     grid-template-columns: auto auto;
   }
   /* tarjeta de los productos */
-  .card {
-    display: flex;
-   width: 800px;
-    /* max-height: 100px; */
+  .card-item-ultimo-paso {
+    display: grid;
+    grid-template-columns: 200px auto;
+  
+    width: 800px;
+    max-height: 150px;
     margin: 20px auto;
     border: 1px solid #fffcfc;
     border-radius: 8px;
     overflow: hidden;
     margin-left: 0;
     background-color: #fff;
-    -webkit-box-shadow: 2px 6px 9px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 6px 9px 0px rgba(0,0,0,0.75);
-  box-shadow: 2px 6px 9px 0px rgba(0,0,0,0.75)
+    -webkit-box-shadow: 2px 6px 9px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 6px 9px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 6px 9px 0px rgba(0, 0, 0, 0.75);
   }
   
-  .card img {
+  .card-item-ultimo-paso img {
     width: 200px;
-    height: auto;
+    height: 150px;
     object-fit: cover;
   }
   
-  .info {
+  .info-item {
     flex: 1;
-    padding: 20px;
+    /* padding: 20px; */
   }
   
-  .info h2 {
+  .info-item > * {
+    margin: 0;
+  }
+  
+  .info-item h2 {
     font-size: 24px;
     margin-top: 0;
   }
   
-  .info p {
+  /* .info p {
     margin: 0 0 10px;
   }
   
@@ -269,7 +275,7 @@ html, body {
   
   .info ul li {
     margin-bottom: 5px;
-  }
+  } */
   
   /* resumen de la compra */
   .resumen {
