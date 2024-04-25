@@ -1,17 +1,19 @@
 <div class="navegation">
     <div class="userlogin">
-        <div class="profileuser"></div>
         <div class="nombreuser">
-        andres pollito
-        <div class="cargo">vendedor</div>
-        </div>
+            <div class="img-user">
+                <img src="/static/imgs/empresa/img-user.jpg" alt="">
+                andres pollito
+                <div class="cargo">Administrador</div>
+                </div>
+            </div>
     </div>
 
     <div class="navegationcontet">
         <a
             class="intemnavegation"
             id="home"
-            href="{{ url_for('administrador_home') }}"
+            href="{{ url_for('administrador') }}"
         >
             <img
                 class="imgnav"
@@ -25,7 +27,7 @@
         class="intemnavegation"
         ,
         id="Administrador"
-        href="{{ url_for('productos_vendedor') }}"
+        href="{{ url_for('administrador_administrador') }}"
         >
         <img
             class="imgnav"
@@ -38,7 +40,7 @@
         class="intemnavegation"
         ,
         id="Empresas"
-        href="{{ url_for('clientes_vendedor') }}"
+        href="{{ url_for('empresas') }}"
         >
         <img
             class="imgnav"

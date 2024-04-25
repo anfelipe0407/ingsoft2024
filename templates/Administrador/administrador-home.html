@@ -41,8 +41,8 @@
         
           <div class="panel">
             <div class="accesorapido">
-              <a class="griditem" href="/proyectoingweb2024-1/Sheyla/productosvendedor.html">
-              <div class="botonaccess" id="botonproduct">
+              <a class="griditem" href="{{ url_for('empresas') }}">
+              <div class="botonaccess" id="botonempresas">
                 <div class="imgcontainer">
                 <img id="imagenitem"
                   src="/static/imgs/vendedor/productboton.png"
@@ -54,8 +54,8 @@
             
             </a>
 
-              <a class="griditem" href="{{ url_for('cotizaciones_vendedor') }}">
-              <div class="botonaccess" id="botoncotizaciones">
+              <a class="griditem" href="{{ url_for('administrador_administrador') }}">
+              <div class="botonaccess" id="botonadministrador">
                 <div class="imgcontainer">
                 <img id="imagenitem"
                   src="/static/imgs/vendedor/cotizacionesnboton.png"

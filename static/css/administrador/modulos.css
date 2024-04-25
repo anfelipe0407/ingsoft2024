@@ -193,3 +193,40 @@ body{
     margin-left: 40px;
   }
   
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.boton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1px;
+}
+
+.boton-cotizacion {
+    background-color: #B0A8A8;
+}
+
+.boton-informes {
+    background-color: #B0A8A8;
+}
+
+.boton-vendedores {
+    background-color: #B0A8A8;
+}
+
+.boton-inventario {
+    background-color: #B0A8A8;
+}

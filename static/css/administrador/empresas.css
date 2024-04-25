@@ -147,11 +147,11 @@ body{
     border-style: none;
   }
   
-  #botonempresas{
+  #botoncrearempresa{
     background-color: #0070FF;
   }
   
-  #botonadministrador{
+  #botoneliminarempresa{
     background-color: #9385F7;
   }
   
@@ -193,3 +193,44 @@ body{
     margin-left: 40px;
   }
   
+  table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.circulo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.verde {
+    background-color: green;
+}
+
+.rojo {
+    background-color: red;
+}
+
+.boton-modulos {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
