@@ -1,6 +1,11 @@
-from flask import Flask, render_template, request, json, jsonify
+from flask import Flask, render_template, request, json, jsonify, redirect
 
 app = Flask(__name__)
+
+# ! LOGIN
+@app.route('/login', methods=['GET'])
+def login():
+    return render_template("login/login.html")
 
 # ! RUTA SHEYLA
 @app.route('/vendedor', methods=['GET'])
@@ -57,6 +62,15 @@ def empresa_inventario():
 def empresa_inventario_crear():
     return render_template("empresa/empresa-inventario-crear.html")
 
+# * Cotizaciones
+@app.route('/empresa/cotizaciones', methods=['GET'])
+def empresa_cotizaciones():
+    return render_template("empresa/empresa-cotizacion.html")
+
+@app.route('/empresa/cotizaciones/nueva', methods=['GET'])
+def empresa_cotizaciones_crear():
+    return render_template("empresa/empresa-cotizacion-crear.html")
+
 # * Ordenes de compra
 @app.route('/empresa/ordenes', methods=['GET'])
 def empresa_ordenes():
@@ -91,6 +105,11 @@ def empresa_vendedores():
 @app.route('/empresa/vendedores/crear', methods=['GET'])
 def empresa_vendedores_crear():
     return render_template("empresa/empresa-vendedor-crear.html")
+
+# Manejar rutas no encontradas
+@app.errorhandler(404)
+def page_not_found(error):
+    return redirect('/login')
 
 if __name__ == '__main__':
     app.run(debug=True)
