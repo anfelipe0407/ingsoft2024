@@ -1,5 +1,5 @@
 body{
-    background-color: #ffffff;
+  background-color: #f0f0f0;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     
@@ -12,6 +12,7 @@ body{
       width: 100vw;
       padding: 0;
       margin: 0;
+      background-color: 
     }
     #cotizaciones{
       background-color: #38b6a0;
@@ -62,7 +63,7 @@ body{
 
 .step.active {
   background-color: #3498db;
-  color: #fff;
+  color: #eeebeb;
 }
 
 .step-content {
@@ -192,7 +193,7 @@ table tbody tr:nth-child(even) {
 /* tarjeta de los productos */
 .card {
   display: flex;
- width: 800px;
+  width: 800px;
   max-height: 100px;
   margin: 20px auto;
   border: 1px solid #fffcfc;
