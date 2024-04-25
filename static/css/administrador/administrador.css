@@ -2,9 +2,11 @@ body{
   background-color: #f0ebeb;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
+
+  margin: 0;
 }
 
-.container {
+.container-main {
   display: grid;
   grid-template-columns: 15% 85%;
   border: 5cap;
@@ -18,7 +20,8 @@ body{
   grid-template-rows: 20% auto 10%;
   height: 100%;
   width: 100%;
-  border: 5cap;
+  padding: 5%;
+  box-sizing: border-box;
 }
 
 

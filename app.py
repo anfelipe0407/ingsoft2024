@@ -7,7 +7,7 @@ app = Flask(__name__)
 def login():
     return render_template("login/login.html")
 
-# ! RUTA SHEYLA
+# ! VENDEDOR
 @app.route('/vendedor', methods=['GET'])
 def home_vendedor():
     return render_template("vendedor/homevendedor.html")
@@ -30,8 +30,7 @@ def hacercotizaciones_vendedor():
 def empresa_ver_cotizacion():
     return render_template("/vendedor/cotizacion-vendedor-ver.html")
 
-
-# ! RUTA GUSTAVO
+# ! ADMINISTRADOR
 @app.route('/administrador/', methods=['GET'])
 def administrador():
     return render_template("administrador/administrador-home.html")
@@ -56,32 +55,14 @@ def eliminarempresa():
 def modulos():
     return render_template("administrador/modulos.html")
 
-# @app.route('/administrador/', methods=['GET'])
-# def administrador():
-#     return render_template("administrador/administrador-home.html")
-
-# @app.route('/administrador/empresas', methods=['GET'])
-# def empresas():
-#     return render_template("administrador/empresas.html")
-
-# @app.route('/administrador/administrador', methods=['GET'])
-# def administrador_administrador():
-#     return render_template("administrador/administrador.html")
-
-# @app.route('/administrador/crearempresa', methods=['GET'])
-# def crearempresa():
-#     return render_template("administrador/crearempresa.html")
-
-# @app.route('/administrador/eliminarempresa', methods=['GET'])
-# def eliminarempresa():
-#     return render_template("administrador/eliminarempresa.html")
-
-# @app.route('/administrador/modulos', methods=['GET'])
-# def modulos():
-#     return render_template("administrador/modulos.html")
+# ! CLIENTE
+# * home
+@app.route('/cliente', methods=['GET'])
+def cliente_home():
+    return render_template("cliente/cliente-home.html")
 
 
-# ! RUTA AGUILAR
+# ! EMPRESA
 # * home
 @app.route('/empresa', methods=['GET'])
 def empresa_home():
