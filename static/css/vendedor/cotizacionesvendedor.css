@@ -48,3 +48,31 @@ width: auto;
 .tablacotizacion tr:last-child td {
   border-bottom: none;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+h2 {
+  text-align: center;
+  padding-top: 2%;
+}
+
+.padingtablas{
+  padding:7%;
+  padding-top:3%;
+}
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
