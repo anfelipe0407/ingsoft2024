@@ -66,4 +66,47 @@ function buscar() {
   }
 }
 
+//guardar cliente en la bdd
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el cuerpo de la tabla
+    const tableBody = document.getElementById('tableBody');
+
+    // Hacer una solicitud para obtener los datos de los clientes desde el servidor
+    axios.get('/obtener_clientes')
+        .then(function(response) {
+            const clientes = response.data;
+
+            // Iterar sobre la lista de clientes y agregar cada cliente como una fila en la tabla
+            clientes.forEach(function(cliente) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${cliente.id}</td>
+                    <td>${cliente.nombre}</td>
+                    <td>${cliente.cantidad}</td>
+                    <td>
+                        <button class="editar" onclick="editarCliente(${cliente.id})">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button class="eliminar" onclick="eliminarCliente(${cliente.id})">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(function(error) {
+            console.error('Error al obtener los datos de los clientes:', error);
+        });
+});
+
+function editarCliente(id) {
+    // Lógica para editar el cliente con el ID dado
+    
+}
+
+function eliminarCliente(id) {
+    // Lógica para eliminar el cliente con el ID dado
+   
+}

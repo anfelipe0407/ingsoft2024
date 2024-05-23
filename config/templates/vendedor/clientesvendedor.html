@@ -69,7 +69,7 @@
             <div class="container">
                 <div class="agregar-cliente">
                 <h2 id="agregarcliente"><strong>Agregar clientes</strong></h2>
-                <button type="button" class="botonclientes">✓ Guardar nuevo cliente</button>
+                <button type="button" class="botonclientes" onclick="guardarNuevoCliente()">✓ Guardar nuevo cliente</button>
                 </div>
               <div class="container-form">
                 
@@ -85,7 +85,7 @@
                       <li>Correo Electrónico</li>
                     </ul>
                   </div>
-                  <form action="#">
+                  <form >
                     <div class="form-row">
                       <div class="form-group">
                         <label for="nombre">Nombre o Razón Social:</label>
@@ -188,18 +188,8 @@
                   </tr>
                 </thead>
                 <tbody id="tableBody">
-                  {%for i in range(1,31)%}
-                  <tr>
-                    <td>{{ i }}</td>
-                    <td>Cliente A</td>
-                    <td>5</td>
-                    <td>
-                        <button class="editar"><i class="fas fa-pencil-alt"></i></button>
-                        <button class="eliminar"><i class="fas fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  {%endfor%}
-                </tbody>
+                  
+              </tbody>
               </table>
               <div id="pagination" class="pagination"></div>
             </div>
