@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from config.db import bd, ma
+from config.db import bd, crear_base_de_datos_y_tablas
 
 from models.EmpresaModel import Empresa, EmpresaSchema
 from models.ModulosEmpresaModel import ModulosEmpresa, ModulosEmpresaSchema
@@ -58,6 +58,11 @@ def crear_empresa():
 
     bd.session.add(nueva_empresa)
     bd.session.commit()
+    
+    crear_base_de_datos_y_tablas(nombre)
+
+    # Crear las tablas necesarias en la nueva base de datos para la empresa
+    bd.create_all()
 
     return empresa_schema.jsonify(nueva_empresa)
 

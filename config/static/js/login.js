@@ -1,6 +1,7 @@
 console.log("LOGIN JS")
 
 const BASE_URL = 'http://127.0.0.1:5000/api'
+const BASE_GENERAL_URL = 'http://127.0.0.1:5000/general'
 
 const formData = {
     usuario: '',
@@ -8,9 +9,14 @@ const formData = {
     rol: {
         id: 0,
         nombre: ''
-    }
+    },
+    empresa: {
+        id: 0,
+        nombre: ''
+    },
 }
 
+// ! ROLES
 async function getRoles(){
     const response = await axios.get(BASE_URL + "/roles")
     return response?.data || [];
@@ -46,8 +52,40 @@ async function updateSelect(){
     });
 }
 
+// ! ROLES
+async function getEmpresas(){
+    const response = await axios.get(BASE_GENERAL_URL + "/empresas")
+    return response?.data || [];
+}
+
+async function updateSelectEmpresa(){
+    const select = document.getElementById('empresa-select');
+    const empresas = await getEmpresas();
+
+    console.log('Empresas', empresas);
+
+    select.innerHTML = '';
+
+    empresas.forEach(empresa => {
+        const option = document.createElement('option');
+        option.value = empresa.nombre;
+        option.text = empresa.nombre;
+        option.setAttribute('data-id', empresa.id); // Set custom attribute for id
+        select.appendChild(option);
+    });
+
+    // Add change event listener
+    select.addEventListener('change', (event) => {
+        const selectedOption = event.target.options[event.target.selectedIndex];
+        formData.empresa.nombre = selectedOption.value;
+        formData.empresa.id = selectedOption.getAttribute('data-id');
+        console.log('Selected empresa:', formData.empresa);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     updateSelect();
+    updateSelectEmpresa();
 });
 
 document.getElementById('login-form').addEventListener('submit', async function(event) {
