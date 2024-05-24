@@ -109,12 +109,12 @@
                 <div class="subbar left-bar">
                   <div class="form-item">
                     <label><strong>Nombre:</strong></label>
-                    <input type="text" />
+                    <input type="text" name="Nombre"/>
                   </div>
 
                   <div class="form-item">
                     <label><strong>Código:</strong></label>
-                    <input type="text" id="codigoInput" />
+                    <input type="text" id="codigoInput" name="Codigo"/>
                   </div>
 
                   <div class="form-item">
@@ -135,17 +135,17 @@
                 <div class="subbar mid-bar">
                   <div class="form-item">
                     <label><strong>Valor unitario:</strong></label>
-                    <input type="text" />
+                    <input type="text" name="precio_unitario" />
                   </div>
 
                   <div class="form-radio-item">
                     <label><strong>Iva (19%)</strong></label>
-                    <input type="radio" />
+                    <input type="radio" name="Iva"/>
                   </div>
 
                   <div class="form-item">
                     <label><strong>Imagen:</strong></label>
-                    <input type="file" accept="image/*" />
+                    <input type="file" accept="image/*" name="Imagen" />
                   </div>
 
                   <div class="form-item">
@@ -155,18 +155,18 @@
                         >(calculado a partir del porcentaje de ganancias)</label
                       >
                     </label>
-                    <input type="text" />
+                    <input type="text" required disabled/ name="PrecioVenta">
                   </div>
                 </div>
                 <div class="subbar right-bar">
                   <div class="form-item">
                     <label><strong>Cantidad:</strong></label>
-                    <input type="text" />
+                    <input type="text" name="stock_actual"/>
                   </div>
 
                   <div class="form-item">
                     <label><strong>Cantidad mín de existencia:</strong></label>
-                    <input type="text" />
+                    <input type="text" name="stock_minimo"/>
                   </div>
 
                   <div class="form-item">
@@ -176,13 +176,22 @@
                         arrow_outward
                       </span>
                     </button>
+
+                  </div>
+                  <div class="form-item">
+                    <label><strong>Proveedor</strong></label>
+                    <select class="form-select" id="proveedor" aria-label="Default select example">
+                      <option selected>seleccionar</option>
+                  
+                      
+                    </select>
+
                   </div>
                 </div>
               </div>
 
               <div class="btn-wrapper">
                 <button class="btn btn-warning" id="btnguardar-producto">Guardar</button>
-                <button class="btn btn-danger">Cancelar</button>
               </div>
             </form>
           </div>

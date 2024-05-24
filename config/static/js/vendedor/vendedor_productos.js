@@ -1,5 +1,4 @@
 
-
   //tabla stock
   document.addEventListener("DOMContentLoaded", function() {
     const tableBody = document.getElementById("tableBody");
@@ -49,6 +48,7 @@
         }
     }
 });
+//buscar 
 function buscar() {
   const input = document.getElementById('search');
   const filter = input.value.toUpperCase();
@@ -134,146 +134,159 @@ const botonespaginacion=document.querySelector('#pagination-buttons')
 
 
 // generar codigo de barras
-
 document.getElementById('generarcod').addEventListener('click', function() {
     const codigo = document.getElementById('codigoInput').value;
     generarCodigoDeBarras(codigo);
 });
-
-
 function generarCodigoDeBarras(codigo) {
     JsBarcode("#codigoDeBarras")
         .options({font: "OCR-B"}) // Aplicar la fuente OCR-B
         .EAN13(codigo, {fontSize: 18, textMargin: 0})
         .blank(20) // Crear espacio entre los códigos de barras
         .render();
-
-
 }
 
 
-//guardar informacion devproductos  en bddd
 
+// obetener los nombres de los proveedores y ponerlos en el select
+document.addEventListener('DOMContentLoaded', function () {
+    let proveedorSelect = document.getElementById('proveedor');
+    let endpoint ="/api/nombres-proveedores";
+    axios.get(endpoint)
+        .then(function (response) {
+            const proveedores = response.data;
+            proveedores.forEach(proveedor => {
+                const option = document.createElement('option');
+                option.value = proveedor.id;
+                option.textContent = proveedor.nombre;
+                proveedorSelect.appendChild(option);
+            });
+        })
+        .catch(function (error) {
+            console.error("Hubo un error al obtener los proveedores:", error);
+        });
+});
+
+//guardar informacion devproductos  en bddd
 document.getElementById('btnguardar-producto').addEventListener('click', function() {
-    
     
     const form = document.querySelector('form');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-     // Obtener los valores de los campos del formulario
-     const nombre = document.querySelector('input[name="Nombre"]').value;
-     const codigo = document.querySelector('input[name="Código"]').value;
-     const valorUnitario = document.querySelector('input[name="Valor unitario"]').value;
-     const iva = document.querySelector('input[name="Iva"]:checked') ? 'Aplicado' : 'No Aplicado';
-     const imagen = document.querySelector('input[name="Imagen"]').value;
-     const precioVenta = document.querySelector('input[name="Precio de venta"]').value;
-     const cantidad = document.querySelector('input[name="Cantidad"]').value;
-     const cantidadMinima = document.querySelector('input[name="Cantidad mín de existencia"]').value;
-     const productoAlternativo = document.querySelector('input[name="Producto alternativo"]').value;
-
-        // Aquí puedes realizar la lógica para guardar los datos, ya sea enviándolos a un servidor o almacenándolos localmente
+        event.preventDefault(); 
+     var nombre = document.querySelector('input[name="Nombre"]').value;
+     var codigo = document.querySelector('input[name="Codigo"]').value;
+     var precio_unitario = document.querySelector('input[name="precio_unitario"]').value;
+     var iva = document.querySelector('input[name="Iva"]:checked') ? 19 : 0;
+     var stock_actual = document.querySelector('input[name="stock_actual"]').value;
+     var stock_minimo = document.querySelector('input[name="stock_minimo"]').value;
+     
+     var precioVenta= precio_unitario;
         
-        let endpoint = "/api/productos/guardar";  // Este es el endpoint al que enviarás los datos
-
+        endpoint = "/api/productos/guardar"; 
         axios.post(endpoint, {
             nombre,
             codigo,
-            valorUnitario,
+            precio_unitario,
             iva,
-            imagen,
-            precioVenta,
-            cantidad,
-            cantidadMinima,
-            productoAlternativo
+            stock_actual,
+            stock_minimo
         })
         .then(function (response) {
             alert("Producto guardado exitosamente");
-           
+           console.log("si sirve yuju");
         })
         .catch(function (error) {
             alert("hubo un error en guardar el producto");
         });
-        // Por ejemplo, puedes mostrar los datos en la consola
         
-
-        // Luego de guardar los datos, puedes reiniciar el formulario si es necesario
         form.reset();
     });
 });
 
-//sacar los productos de la base de datos y mostrarlos
-document.addEventListener('DOMContentLoaded', function() {
-    endpoint="/api/productos-listado";
-    axios.get(endpoint)
-        .then(function (response) {
-            const productos = response.data;
-            const container = document.getElementById('productos-container');
-            productos.forEach(function(producto) {
-                const card = document.createElement('div');
-                card.classList.add('col-md-4');
-                card.innerHTML = `
-                    <div class="card">
-                        <img src="${producto.imagen_url}" class="card-img-top" alt="${producto.nombre}">
-                        <div class="card-body">
-                            <h5 class="card-title">${producto.nombre}</h5>
-                            <p class="card-text">${producto.precio_ubitario} €</p>
-                            <a onclick="showModal('${producto.id}')" class="btn btn-primary">
-                                <i class="fas fa-eye"></i>
-                                Ver
-                            </a>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        })
-        .catch(function (error) {
-            console.error('Error al obtener los productos:', error);
-        });
-});
 
-//ver stock
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener el contenedor de la tabla
-    const tableBody = document.getElementById('tableBody');
+
+
+
+
+
+// //sacar los productos de la base de datos y mostrarlos
+// document.addEventListener('DOMContentLoaded', function() {
+//     endpoint="/api/productos-listado";
+//     axios.get(endpoint)
+//         .then(function (response) {
+//             const productos = response.data;
+//             const container = document.getElementById('productos-container');
+//             productos.forEach(function(producto) {
+//                 const card = document.createElement('div');
+//                 card.classList.add('col-md-4');
+//                 card.innerHTML = `
+//                     <div class="card">
+//                         <img src="${producto.imagen_url}" class="card-img-top" alt="${producto.nombre}">
+//                         <div class="card-body">
+//                             <h5 class="card-title">${producto.nombre}</h5>
+//                             <p class="card-text">${producto.precio_ubitario} €</p>
+//                             <a onclick="showModal('${producto.id}')" class="btn btn-primary">
+//                                 <i class="fas fa-eye"></i>
+//                                 Ver
+//                             </a>
+//                         </div>
+//                     </div>
+//                 `;
+//                 container.appendChild(card);
+//             });
+//         })
+//         .catch(function (error) {
+//             console.error('Error al obtener los productos:', error);
+//         });
+// });
+
+
+
+
+
+
+
+// //ver stock
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Obtener el contenedor de la tabla
+//     const tableBody = document.getElementById('tableBody');
     
-    // Hacer una solicitud a la API para obtener los datos de los productos desde la base de datos
-    axios.get('/api/productos-listado')
-        .then(function(response) {
-            const productos = response.data;
+//     // Hacer una solicitud a la API para obtener los datos de los productos desde la base de datos
+//     axios.get('/api/productos-listado')
+//         .then(function(response) {
+//             const productos = response.data;
             
-            // Función para determinar el color del stock según la cantidad disponible
-            function getColor(cantidad, stock_minimo) {
-                if (cantidad <= 0) {
-                    return 'rojo';
-                } else if (cantidad <= stock_minimo) {
-                    return 'amarillo';
-                } else {
-                    return 'verde';
-                }
-            }
+//             // Función para determinar el color del stock según la cantidad disponible
+//             function getColor(cantidad, stock_minimo) {
+//                 if (cantidad <= 0) {
+//                     return 'rojo';
+//                 } else if (cantidad <= stock_minimo) {
+//                     return 'amarillo';
+//                 } else {
+//                     return 'verde';
+//                 }
+//             }
             
-            // Generar filas de la tabla para cada producto
-            productos.forEach(function(producto, index) {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${producto.nombre}</td>
-                    <td>
-                        <span class="stock ${getColor(producto.cantidad, producto.stock_minimo)}"></span>
-                        ${producto.cantidad}
-                    </td>
-                    <td>${producto.proveedor}</td>
-                    <td>${producto.descripcion}</td>
-                    <td><button class="orden"> <i class="fas fa-truck"></i></button></td>
-                `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(function(error) {
-            console.error('Error al obtener los productos:', error);
-        });
-});
+//             // Generar filas de la tabla para cada producto
+//             productos.forEach(function(producto, index) {
+//                 const row = document.createElement('tr');
+//                 row.innerHTML = `
+//                     <td>${index + 1}</td>
+//                     <td>${producto.nombre}</td>
+//                     <td>
+//                         <span class="stock ${getColor(producto.cantidad, producto.stock_minimo)}"></span>
+//                         ${producto.cantidad}
+//                     </td>
+//                     <td>${producto.proveedor}</td>
+//                     <td>${producto.descripcion}</td>
+//                     <td><button class="orden"> <i class="fas fa-truck"></i></button></td>
+//                 `;
+//                 tableBody.appendChild(row);
+//             });
+//         })
+//         .catch(function(error) {
+//             console.error('Error al obtener los productos:', error);
+//         });
+// });
 
