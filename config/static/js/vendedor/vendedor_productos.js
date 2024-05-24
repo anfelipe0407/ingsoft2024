@@ -175,7 +175,7 @@ document.getElementById('btnguardar-producto').addEventListener('click', functio
 
         // Aquí puedes realizar la lógica para guardar los datos, ya sea enviándolos a un servidor o almacenándolos localmente
         
-        const endpoint = "/api/productos/guardar";  // Este es el endpoint al que enviarás los datos
+        let endpoint = "/api/productos/guardar";  // Este es el endpoint al que enviarás los datos
 
         axios.post(endpoint, {
             nombre,
@@ -205,7 +205,8 @@ document.getElementById('btnguardar-producto').addEventListener('click', functio
 
 //sacar los productos de la base de datos y mostrarlos
 document.addEventListener('DOMContentLoaded', function() {
-    axios.get('/api/productos')
+    endpoint="/api/productos-listado";
+    axios.get(endpoint)
         .then(function (response) {
             const productos = response.data;
             const container = document.getElementById('productos-container');
@@ -217,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${producto.imagen_url}" class="card-img-top" alt="${producto.nombre}">
                         <div class="card-body">
                             <h5 class="card-title">${producto.nombre}</h5>
-                            <p class="card-text">${producto.precio} €</p>
+                            <p class="card-text">${producto.precio_ubitario} €</p>
                             <a onclick="showModal('${producto.id}')" class="btn btn-primary">
                                 <i class="fas fa-eye"></i>
                                 Ver
@@ -239,15 +240,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const tableBody = document.getElementById('tableBody');
     
     // Hacer una solicitud a la API para obtener los datos de los productos desde la base de datos
-    axios.get('/api/productos')
+    axios.get('/api/productos-listado')
         .then(function(response) {
             const productos = response.data;
             
             // Función para determinar el color del stock según la cantidad disponible
-            function getColor(cantidad, cantidad_minima) {
+            function getColor(cantidad, stock_minimo) {
                 if (cantidad <= 0) {
                     return 'rojo';
-                } else if (cantidad <= cantidad_minima) {
+                } else if (cantidad <= stock_minimo) {
                     return 'amarillo';
                 } else {
                     return 'verde';
@@ -261,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td>${index + 1}</td>
                     <td>${producto.nombre}</td>
                     <td>
-                        <span class="stock ${getColor(producto.cantidad, producto.cantidad_minima)}"></span>
+                        <span class="stock ${getColor(producto.cantidad, producto.stock_minimo)}"></span>
                         ${producto.cantidad}
                     </td>
                     <td>${producto.proveedor}</td>
