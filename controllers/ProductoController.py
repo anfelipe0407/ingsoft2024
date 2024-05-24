@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify
 from models.ProductoModel import Producto, ProductoSchema
+from models.UsuarioModel import Usuario, UsuarioSchema
 
 
 producto_schema = ProductoSchema()
@@ -24,3 +25,4 @@ def productoslistado():
     output = producto_schema.dump(productos)
     
     return jsonify(output)
+    return jsonify(resultado)

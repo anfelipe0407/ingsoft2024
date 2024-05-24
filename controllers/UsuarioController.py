@@ -9,7 +9,7 @@ usuarios_schema = UsuarioSchema(many=True)
 ruta_usuario = Blueprint('ruta_usuario', __name__)
 
 # Ruta para obtener todos los usuarios
-@ruta_usuario.route('/usuarios', methods=['GET'])
+@ruta_usuario.route('/pollito', methods=['GET'])
 def obtener_usuarios():
     usuarios = Usuario.query.all()
     resultado = usuarios_schema.dump(usuarios)
