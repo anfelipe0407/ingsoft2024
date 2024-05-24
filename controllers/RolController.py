@@ -9,7 +9,7 @@ roles_schema = RolSchema(many=True)
 ruta_roles = Blueprint('ruta_roles', __name__)
 
 # Ruta para obtener todos los roless
-@ruta_roles.route('/roles', methods=['GET'])
+@ruta_roles.route('/rolespollito', methods=['GET'])
 def obtener_roless():
     roles = Rol.query.all()
     resultado = roles_schema.dump(roles)

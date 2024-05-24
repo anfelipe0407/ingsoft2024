@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify
 from models.ProductoModel import Producto, ProductoSchema
+from models.UsuarioModel import Usuario, UsuarioSchema
 
 producto_schema = ProductoSchema()
 productos_schema = ProductoSchema(many=True)
