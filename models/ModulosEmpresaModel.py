@@ -1,5 +1,6 @@
 # app/models/usuario.py
 from config.db import bd, ma, app
+from marshmallow import fields
 
 class ModulosEmpresa(bd.Model):
     __tablename__ = "modulosempresas"

@@ -1,20 +1,29 @@
 from flask import Blueprint, jsonify, request
-from models.EmpresaModel import Empresa, EmpresaSchema
 from config.db import bd, ma
+
+from models.EmpresaModel import Empresa, EmpresaSchema
+from models.ModulosEmpresaModel import ModulosEmpresa, ModulosEmpresaSchema
+from models.ModuloModel import Modulo, ModuloSchema
 
 empresa_schema = EmpresaSchema()
 empresas_schema = EmpresaSchema(many=True)
 
+modulos_empresa_schema = ModulosEmpresaSchema(many=True)
+
+modulo_schema = ModuloSchema()
+modulos_empresa_schema = ModulosEmpresaSchema(many=True)
+
 ruta_empresa = Blueprint('ruta_empresa', __name__)
 
-# ! GET ALL
+# ! ----------------- EMPRESA -----------------
+# * GET ALL
 @ruta_empresa.route('/empresas', methods=['GET'])
 def obtener_empresas():
     todas_las_empresas = Empresa.query.all()
     resultado = empresas_schema.dump(todas_las_empresas)
     return jsonify(resultado)
 
-# ! GET BY ID
+# * GET BY ID
 @ruta_empresa.route('/empresas/<int:id>', methods=['GET'])
 def obtener_empresa_por_id(id):
     empresa = Empresa.query.get(id)
@@ -22,7 +31,7 @@ def obtener_empresa_por_id(id):
         return jsonify({'message': 'Empresa no encontrada'}), 404
     return empresa_schema.jsonify(empresa)
 
-# ! CREATE
+# * CREATE
 @ruta_empresa.route('/empresas/create', methods=['POST'])
 def crear_empresa():
     nombre = request.json.get('nombre')
@@ -52,7 +61,7 @@ def crear_empresa():
 
     return empresa_schema.jsonify(nueva_empresa)
 
-# ! UPDATE
+# * UPDATE
 @ruta_empresa.route('/empresas/<int:id>', methods=['PUT'])
 def actualizar_empresa(id):
     empresa = Empresa.query.get(id)
@@ -73,3 +82,50 @@ def actualizar_empresa(id):
     bd.session.commit()
 
     return empresa_schema.jsonify(empresa)
+
+# * DELETE
+@ruta_empresa.route('/empresas/<int:id>', methods=['DELETE'])
+def eliminar_empresa(id):
+    # Buscar la empresa por su ID
+    empresa = Empresa.query.get(id)
+    
+    # Verificar si la empresa existe
+    if not empresa:
+        return jsonify({"error": "Empresa no encontrada"}), 404
+
+    try:
+        # Eliminar la empresa de la base de datos
+        bd.session.delete(empresa)
+        bd.session.commit()
+        return jsonify({"message": "Empresa eliminada correctamente"}), 200
+    except Exception as e:
+        # En caso de error, hacer rollback de la transacción
+        bd.session.rollback()
+        return jsonify({"error": str(e)}), 500
+
+# ! ----------------- MODULOS -----------------
+@ruta_empresa.route('/empresas/<int:id>/modulos', methods=['GET'])
+def obtener_modulos_empresa(id):
+    # Buscar los módulos asociados a la empresa con el ID dado
+    modulos_empresa = ModulosEmpresa.query.filter_by(id_empresa=id).all()
+
+    # Lista para almacenar los datos serializados de los módulos
+    modulos_empresa_serializados = []
+
+    # Iterar sobre los módulos asociados y obtener la información detallada de cada módulo
+    for modulo_empresa in modulos_empresa:
+        modulo = Modulo.query.get(modulo_empresa.id_modulo)
+        if modulo:
+            # Serializar la información del módulo
+            modulo_serializado = modulo_schema.dump(modulo)
+            # Agregar la información del módulo a los datos de la empresa
+            empresa_con_modulo = {
+                'id_empresa': modulo_empresa.id_empresa,
+                'id_modulo': modulo.id,
+                'modulo': modulo_serializado
+            }
+            # Agregar los datos de la empresa con el módulo anidado a la lista
+            modulos_empresa_serializados.append(empresa_con_modulo)
+
+    # Retornar los datos serializados en formato JSON
+    return jsonify(modulos_empresa_serializados)

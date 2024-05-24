@@ -30,6 +30,6 @@ def crearempresa():
 def eliminarempresa():
     return render_template("administrador/eliminarempresa.html")
 
-@app.route('/administrador/modulos', methods=['GET'])
-def modulos():
-    return render_template("administrador/modulos.html")
+@app.route('/administrador/modulos/<int:id>', methods=['GET'])
+def modulos(id):
+    return render_template("administrador/modulos.html", id=id)
