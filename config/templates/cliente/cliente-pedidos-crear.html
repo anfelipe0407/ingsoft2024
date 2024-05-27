@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cliente | Mantenimientos</title>
+    <title>Cliente | Pedido crear</title>
 
     <!-- ! FONT AWESOME -->
     <link
@@ -34,7 +34,7 @@
 
     <link
       rel="stylesheet"
-      href="/static/css/cliente/cliente-mantenimientos.css"
+      href="/static/css/cliente/cliente-pedidos-crear.css"
     />
 
     <link
@@ -44,7 +44,7 @@
 
     <!-- ! JS -->
     <script
-      src="/static/js/cliente/cliente-mantenimientos.js"
+      src="/static/js/cliente/cliente-pedidos-crear.js"
       defer
     ></script>
   </head>
@@ -53,7 +53,7 @@
     <div class="main">
       <!-- ! BARRA -->
       <div class="left-nav-wrapper">
-        {% with activo = 'mantenimientos' %} {% include
+        {% with activo = 'pedidos' %} {% include
         'cliente/cliente-barra-de-navegacion.html' %} {% endwith %}
       </div>
 
@@ -62,7 +62,7 @@
         <!-- * BANNER -->
         <div class="banner">
           <img src="/static/imgs/logo.jpg" alt="" />
-          <p>Mis mantenimientos</p>
+          <p>Nuevo pedido</p>
         </div>
 
         <!-- * PANEL -->
@@ -71,43 +71,28 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Nombre Cliente</th>
-                <th>Nombre Empleado</th>
-                <th>Nombre Producto</th>
-                <th>Categoría Producto</th>
-                <th>Estado</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio Unitario</th>
+                <th>Stock</th>
+                <th>Cantidad</th>
                 <th>Acciones</th>
               </tr>
             </thead>
             <tbody id="productos-tbody">
-              <!-- Los servicios se agregarán aquí dinámicamente -->
+              <!-- Los productos se agregarán aquí dinámicamente -->
             </tbody>
           </table>
-        </div>
-
-        <!-- MODAL EDITAR SERVICIO -->
-        <div id="myModal" class="modal">
-          <!-- Contenido de la modal -->
-          <div class="modal-content">
-            <span class="close">&times; Editar servicio</span>
-            <form id="editServicioForm">
-              <label for="nombre_cliente">Nombre Cliente:</label>
-              <input class="form-control" type="text" id="nombre_cliente" name="nombre_cliente" readonly><br>
-              <label for="nombre_empleado">Nombre Empleado:</label>
-              <input class="form-control" type="text" id="nombre_empleado" name="nombre_empleado" readonly><br>
-              <label for="nombre_producto">Nombre Producto:</label>
-              <input class="form-control" type="text" id="nombre_producto" name="nombre_producto" readonly><br>
-              <label for="categoria_producto">Categoría Producto:</label>
-              <input class="form-control" type="text" id="categoria_producto" name="categoria_producto" readonly><br>
-              <label for="estado">Estado:</label>
-              <select class="form-control" id="estado" name="estado">
-                <option value="0">Pendiente</option>
-                <option value="1">Completado</option>
-                <!-- Agrega más opciones según sea necesario -->
-              </select><br>
-              <button class="btn btn-warning" type="submit">Guardar cambios</button>
-            </form>
+        
+          <div class="carrito">
+            <h3><i class="fas fa-shopping-cart"></i> Carrito de Compras</h3>
+            <ul id="carrito-list">
+              <!-- Los productos añadidos al carrito se mostrarán aquí -->
+            </ul>
+            <p id="carrito-total"></p>
+            <button id="hacer-pedido" class="btn btn-success" style="display: none;" onclick="hacerPedido()">Hacer Pedido</button>
           </div>
+
         </div>
       </div>
     </div>

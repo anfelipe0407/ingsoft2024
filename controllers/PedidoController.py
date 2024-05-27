@@ -4,6 +4,9 @@ from config.db import bd, ma, app
 
 from models.PedidoModel import Pedido, PedidoSchema
 from models.UsuarioModel import Usuario, UsuarioSchema
+from models.PedidoModel import Pedido, PedidoSchema
+from models.ProductoModel import Producto, ProductoSchema
+from models.DetallePedido import DetallePedido, DetallePedidoSchema
 
 pedido_schema = PedidoSchema()
 pedidos_schema = PedidoSchema(many=True)
@@ -189,3 +192,38 @@ def get_pedidos_cliente(id_cliente):
     except Exception as e:
         error_message = "Error al procesar la solicitud: {}".format(str(e))
         return jsonify({"error": error_message}), 500
+
+@ruta_pedido.route('/pedidos/cliente/create', methods=['POST'])
+def create_pedido_cliente():
+    try:
+        data = request.get_json()
+        id_cliente = data.get('id_cliente')
+        id_vendedor = data.get('id_vendedor')
+        productos = data.get('productos')
+        
+        # Crear el pedido
+        nuevo_pedido = Pedido(id_cliente=id_cliente, id_vendedor=id_vendedor, estado=0)  # estado 0: pendiente
+        bd.session.add(nuevo_pedido)
+        bd.session.commit()
+
+        # Crear los detalles del pedido y actualizar el stock de productos
+        for producto in productos:
+            id_producto = producto.get('id')
+            cantidad = producto.get('cantidad')
+            producto_db = Producto.query.get(id_producto)
+            
+            if producto_db and producto_db.stock_actual >= cantidad:
+                precio_unitario = producto_db.precio_unitario_actual
+                detalle_pedido = DetallePedido(id_pedido=nuevo_pedido.id, id_producto=id_producto, cantidad=cantidad, precio_unitario=precio_unitario)
+                bd.session.add(detalle_pedido)
+
+                # Actualizar el stock del producto
+                producto_db.stock_actual -= cantidad
+                bd.session.commit()
+            else:
+                return jsonify({"error": f"Stock insuficiente para el producto ID {id_producto}"}), 400
+
+        return pedido_schema.jsonify(nuevo_pedido), 201
+    except Exception as e:
+        bd.session.rollback()
+        return jsonify({"error": str(e)}), 500

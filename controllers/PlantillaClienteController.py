@@ -12,6 +12,10 @@ def cliente():
 def cliente_pedidos():
     return render_template("cliente/cliente-pedidos.html")
 
+@app.route('/cliente/pedidos/crear', methods=['GET'])
+def cliente_pedidos_crear():
+    return render_template("cliente/cliente-pedidos-crear.html")
+
 @app.route('/cliente/mantenimientos', methods=['GET'])
 def cliente_mantenimientos():
     return render_template("cliente/cliente-mantenimientos.html")
