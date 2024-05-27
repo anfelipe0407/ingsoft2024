@@ -1,141 +1,105 @@
+body {
+  background-color: #f0ebeb;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+
+  margin: 0;
+  padding: 0;
+}
 
 /* ! MAIN */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+.main {
+  height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 15% 85%;
+  /* border: 5cap; */
 }
 
-.main-container{
-    height: 100%;
-    width: 100%;
+/* ! CONTENIDO */
+.contenido{
+  width: 100%;
+  height: 100vh;
 
-    display: grid;
-    grid-template-columns: 18% 82%;
-
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.main-container .left-nav-wrapper{
-    width: 100%;
-    height: 100%;
-}
-.main-container .main-dashboard-empresa{
-    width: 100%;
-    height: 100%;
-}
+/* * Banner */
+.banner{
+  width: 100%;
+  padding: 3%;
 
-/* ! LEFT-NAV */
-.left-nav-wrapper{
-    background-color: red;
-}
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 14px;
 
-.main-dashboard-empresa{
-    width: 100%;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
 
-    display: grid;
-    grid-template-rows: 25% 75%;
+  align-items: center;
 }
 
-.main-dashboard-empresa .top-banner{
-    width: 100%;
-
-    padding: 10px 10%;
-    box-sizing: border-box;
-
-    /* background-color: red; */
+.banner img{
+  height: 80px;
 }
 
-
-.main-section-dashboard{
-    width: 100%;
-    height: 100%;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-
-    gap: 7px;
-    padding-left: 40px;
-    box-sizing: border-box;
-
-    overflow: scroll;
-
-    /* background-color: red; */
+.banner p{
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
 }
 
-/* Opciones */
+/* ! PANEL */
+.grid-wrapper{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
-.main-section-dashboard .opciones-wrapper{
-    width: 100%;
-    height: 100%;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    /* padding: 2%; */
-    gap: 3%;
-
-    box-sizing: border-box;
-
-    /* background-color: blue; */
+  padding: 20px;
+  gap: 2%;
+  row-gap: 10%;
+  box-sizing: border-box;
 }
 
-.options-item-main-dashboard{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+.grid-item{
+  width: 100%;
+  height: 100%;
+  background-color: var(--gray-color);
 
-    width: 100%;
-    height: fit-content;
+  display: grid;
+  justify-content: center;
 
-    align-items: center;
+  padding: 12%;
+  box-sizing: border-box;
 
-    border-radius: 12px;
+  border-radius: 18px;
 
-    -webkit-box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.4);
-    -moz-box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.4);
-    box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.4);
+  text-decoration: none;
+  color: black;
 
-    transition: box-shadow 200ms ease-in-out;
-    cursor: pointer;
+  cursor: pointer;
 
-    color: white;
-    text-decoration: none;
-    /* background-color: red; */
+  transition: background-color 150ms ease-in-out;
 }
 
-.options-item-main-dashboard:hover{
-    box-shadow: none;
+.grid-item:hover{
+  background-color: var(--first-color);
 }
 
-.options-item-main-dashboard .icon-options-item{
-    width: 100%;
-    height: 100%;
-
-    padding: 20%;
-    box-sizing: border-box;
-
-    display: grid;
-    place-items: center;
+.grid-item p{
+  margin: 2px;
 }
 
-.icon-options-item i{
-    /* padding: 15%; */
-    box-sizing: border-box;
-    border-radius: 50%;
+.grid-item .icono{
+  width: 100%;
 
-    color: black;
-    background-color: white;
-
-    font-size: 35px;
-    padding: 10px;
+  display: grid;
+  justify-content: center;
 }
 
-
-/* Calendario */
-.main-section-dashboard .calendar-wrapper{
-    width: 100%;
-    height: 100%;
+.grid-item .icono i{
+  font-size: 30px;
 }
+
 

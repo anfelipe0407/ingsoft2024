@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrador | Usuarios</title>
+
+    <!-- ! FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- ! BOOTSTRAP -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- ! AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- ! Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- ! JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- ! CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="/static/css/administrador/administrador-usuarios.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/static/css/administrador/barra-de-navegacion.css"
+    />
+
+    <!-- ! JS -->
+    <script
+      src="/static/js/administrador/administrador-usuarios.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <!-- ! BARRA -->
+      <div class="left-nav-wrapper">
+        {% with activo = 'usuario' %} {% include
+        'administrador/barra-de-navegacion.html' %} {% endwith %}
+      </div>
+
+      <!-- ! CONTENIDO -->
+      <div class="contenido flex-col-center gap-15 pad-30">
+        <!-- * BANNER -->
+        <div class="banner">
+          <img src="/static/imgs/logo.jpg" alt="" />
+          <p>Listado de usuarios</p>
+        </div>
+
+        <!-- * PANEL -->
+        <div class="panel">
+          <div class="checkbox-group">
+            <label
+              ><input
+                type="checkbox"
+                name="userType"
+                value="todos"
+                onclick="handleCheckboxClick(this)"
+                checked
+              />
+              Todos</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="userType"
+                value="vendedor"
+                onclick="handleCheckboxClick(this)"
+              />
+              Vendedor</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="userType"
+                value="tecnico"
+                onclick="handleCheckboxClick(this)"
+              />
+              Técnico</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="userType"
+                value="cliente"
+                onclick="handleCheckboxClick(this)"
+              />
+              Cliente</label
+            >
+          </div>
+
+          <table class="tabla-usuarios table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Número de Teléfono</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Clave</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="usuarios-tbody">
+              <!-- Los usuarios se agregarán aquí dinámicamente -->
+            </tbody>
+          </table>
+
+        </div>
+
+        <!-- * MODAL EDITAR -->
+        <div id="myModal" class="modal">
+          <!-- Contenido de la modal -->
+          <div class="modal-content">
+            <span class="close">&times; Editar usuario</span>
+            <form id="editUserForm">
+              <label for="nombre">Nombre:</label>
+              <input class="form-control" type="text" id="nombre" name="nombre" required><br>
+              <label for="apellidos">Apellidos:</label>
+              <input class="form-control" type="text" id="apellidos" name="apellidos" required><br>
+              <label for="num_telefono">Teléfono:</label>
+              <input class="form-control" type="text" id="num_telefono" name="num_telefono" required><br>
+              <label for="usuario">Usuario:</label>
+              <input class="form-control" type="text" id="usuario" name="usuario" required><br>
+              <label for="rol">Rol:</label>
+              <input class="form-control" type="text" id="rol" name="rol" required><br>
+              <label for="clave">Clave:</label>
+              <input class="form-control" type="text" id="clave" name="clave" required><br>
+              <button class="btn btn-warning" type="submit">Guardar cambios</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

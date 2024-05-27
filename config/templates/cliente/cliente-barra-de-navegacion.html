@@ -5,8 +5,8 @@
         </div>
 
         <div class="info-container">
-            <b><p>Admin Admin</p></b>
-            <p>Administrador</p>
+            <b><p>cliente cliente</p></b>
+            <p>Cliente</p>
         </div>
     </div>
 
@@ -14,7 +14,7 @@
         <hr>
         
         <a
-            href="/administrador"
+            href="/cliente"
             class="nav-menu-item  {% if activo == 'home' %}active-link{% endif %}"
         >
             <div class="icono-left-menu-item">
@@ -29,37 +29,7 @@
         </a>
 
         <a
-            href="/administrador/usuarios"
-            class="nav-menu-item {% if activo == 'usuario' %}active-link{% endif %}"
-        >
-            <div class="icono-left-menu-item">
-                <i class="fas fa-user"></i>
-            </div>
-
-            <div class="texto-left-menu-item">
-                <label>
-                    Usuarios
-                </label>
-            </div>
-        </a>
-
-        <a
-            href="/administrador/productos"
-            class="nav-menu-item {% if activo == 'productos' %}active-link{% endif %}"
-        >
-            <div class="icono-left-menu-item">
-                <i class="fas fa-boxes"></i>
-            </div>
-
-            <div class="texto-left-menu-item">
-                <label>
-                    Productos
-                </label>
-            </div>
-        </a>
-
-        <a
-            href="/administrador/pedidos"
+            href="/cliente/pedidos"
             class="nav-menu-item {% if activo == 'pedidos' %}active-link{% endif %}"
         >
             <div class="icono-left-menu-item">
@@ -68,7 +38,22 @@
 
             <div class="texto-left-menu-item">
                 <label>
-                    Pedidos
+                    Mis pedidos
+                </label>
+            </div>
+        </a>
+
+        <a
+            href="/cliente/mantenimientos"
+            class="nav-menu-item {% if activo == 'mantenimientos' %}active-link{% endif %}"
+        >
+            <div class="icono-left-menu-item">
+                <i class="fas fa-cog"></i>
+            </div>
+
+            <div class="texto-left-menu-item">
+                <label>
+                    Mis mantenimientos
                 </label>
             </div>
         </a>

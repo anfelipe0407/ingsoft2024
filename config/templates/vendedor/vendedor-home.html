@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Administrador| Home</title>
+    <title>Vendeor| Home</title>
 
     <!-- ! FONT AWESOME -->
     <link
@@ -17,12 +17,12 @@
 
     <link
       rel="stylesheet"
-      href="/static/css/administrador/administrador-home.css"
+      href="/static/css/vendedor/vendedor-home.css"
     />
 
     <link
       rel="stylesheet"
-      href="/static/css/administrador/barra-de-navegacion.css"
+      href="/static/css/vendedor/vendedor-barra-de-navegacion.css"
     />
   </head>
 
@@ -31,7 +31,7 @@
       <!-- ! BARRA -->
       <div class="left-nav-wrapper">
         {% with activo = 'home' %} {% include
-        'administrador/barra-de-navegacion.html' %} {% endwith %}
+        'vendedor/vendedor-barra-de-navegacion.html' %} {% endwith %}
       </div>
 
       <!-- ! CONTENIDO -->
@@ -39,49 +39,25 @@
         <!-- * BANNER -->
         <div class="banner">
           <img src="/static/imgs/logo.jpg" alt="">
-          <p>Bienvenido(a) de nuevo administrador</p>
+          <p>Bienvenido(a) de nuevo vendedor</p>
         </div>
 
         <!-- * PANEL -->
         <div class="grid-wrapper">
-          <a class="grid-item" href="/administrador/usuarios">
+          <a class="grid-item" href="/vendedor/ventas">
             <div class="icono">
-              <i class="fas fa-user"></i>
+              <i class="fas fa-cash-register"></i>
             </div>
 
-            <p class="text">Usuarios</p>
+            <p class="text">Mis ventas</p>
           </a>
 
-          <a class="grid-item" href="/administrador/productos">
+          <a class="grid-item" href="/vendedor/productos">
             <div class="icono">
               <i class="fas fa-boxes"></i>
             </div>
 
             <p class="text">Productos</p>
-          </a>
-
-          <a class="grid-item" href="/administrador/pedidos">
-            <div class="icono">
-              <i class="fas fa-list"></i>
-            </div>
-
-            <p class="text">Pedidos</p>
-          </a>
-
-          <a class="grid-item" href="/administrador/mantenimientos">
-            <div class="icono">
-              <i class="fas fa-cog"></i>
-            </div>
-
-            <p class="text">Mantenimientos</p>
-          </a>
-
-          <a class="grid-item" href="/administrador/facturas">
-            <div class="icono">
-              <i class="fas fa-receipt"></i>
-            </div>
-
-            <p class="text">Facturas</p>
           </a>
         </div>
       </div>

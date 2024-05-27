@@ -17,12 +17,12 @@
 
     <link
       rel="stylesheet"
-      href="/static/css/cliente/cliente-home.css"
+      href="/static/css/tecnico/tecnico-home.css"
     />
 
     <link
       rel="stylesheet"
-      href="/static/css/cliente/cliente-barra-de-navegacion.css"
+      href="/static/css/tecnico/tecnico-barra-de-navegacion.css"
     />
   </head>
 
@@ -31,7 +31,7 @@
       <!-- ! BARRA -->
       <div class="left-nav-wrapper">
         {% with activo = 'home' %} {% include
-        'cliente/cliente-barra-de-navegacion.html' %} {% endwith %}
+        'tecnico/tecnico-barra-de-navegacion.html' %} {% endwith %}
       </div>
 
       <!-- ! CONTENIDO -->
@@ -39,22 +39,14 @@
         <!-- * BANNER -->
         <div class="banner">
           <img src="/static/imgs/logo.jpg" alt="">
-          <p>Bienvenido(a) de nuevo cliente</p>
+          <p>Bienvenido(a) de nuevo técnico</p>
         </div>
 
         <!-- * PANEL -->
         <div class="grid-wrapper">
-          <a class="grid-item" href="/cliente/pedidos">
+          <a class="grid-item" href="/tecnico/mantenimientos">
             <div class="icono">
-              <i class="fas fa-list"></i>
-            </div>
-
-            <p class="text">Mis pedidos</p>
-          </a>
-
-          <a class="grid-item" href="/cliente/mantenimientos">
-            <div class="icono">
-              <i class="fas fa-cog"></i>
+              <i class="fas fa-cash-register"></i>
             </div>
 
             <p class="text">Mis mantenimientos</p>

@@ -12,10 +12,11 @@
     width: 100%;
     height: 100%;
 
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background-color: #031D2E;
+    background-color: #ffffff;
 }
 
 .content{
@@ -39,9 +40,6 @@
 }
 
 .logo-container img{
-    width: 200px;
-    height: 200px;
-
     transition: transform 400ms ease-in-out;
 }
 
@@ -56,6 +54,7 @@
     display: grid;
     place-items: center;
 
+    background-color: #2bd739;
 
 }
 
@@ -64,9 +63,10 @@
     flex-direction: column;
     align-items: center;
 
+    background-color: #f3f3f3;
+
     gap: 10px;
 
-    background-color: #efefef;
     border-radius: 14px;
 
     padding: 30px;

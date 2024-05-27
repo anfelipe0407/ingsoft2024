@@ -1,0 +1,137 @@
+body {
+  background-color: #f0ebeb;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* ! MAIN */
+.main {
+  height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 15% 85%;
+  /* border: 5cap; */
+}
+
+/* ! CONTENIDO */
+.contenido{
+  width: 100%;
+  height: 100vh;
+
+  box-sizing: border-box;
+}
+
+/* * Banner */
+.banner{
+  width: 100%;
+  padding: 3%;
+
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 14px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+
+  align-items: center;
+}
+
+.banner img{
+  height: 50px;
+}
+
+.banner p{
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* ! PANEL */
+.panel{
+  width: 100%;
+  padding: 3%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.panel .filter-wrapper{
+  width: 100%;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.panel .filter-wrapper .checkbox-group {
+  display: flex;
+  gap: 10px;
+}
+
+.tabla-usuarios{
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+.circulo-estado{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.bg-green{
+  background-color: green;
+}
+
+.bg-red{
+  background-color: red;
+}
+
+
+/* ! MODAL */
+.modal {
+  display: none; /* Oculta la modal por defecto */
+  position: fixed; /* Permite desplazarse sobre el contenido */
+  z-index: 1; /* Coloca la modal encima de todo */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Permite desplazamiento vertical si el contenido excede la ventana */
+  background-color: rgb(0,0,0); /* Fondo oscuro */
+  background-color: rgba(0,0,0,0.4); /* Fondo oscuro con transparencia */
+}
+
+/* Estilos para el contenido de la modal */
+.modal-content {
+  background-color: #fefefe; /* Fondo blanco */
+  margin: 15% auto; /* Márgenes superior e inferior automáticos, centrado horizontal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ancho de la modal */
+
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
+  padding: 5%;
+}
+
+/* Estilos para el botón de cierre (x) */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

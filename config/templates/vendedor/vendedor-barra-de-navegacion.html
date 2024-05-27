@@ -5,8 +5,8 @@
         </div>
 
         <div class="info-container">
-            <b><p>Admin Admin</p></b>
-            <p>Administrador</p>
+            <b><p>Vendedor Vendedor</p></b>
+            <p>Vendedor</p>
         </div>
     </div>
 
@@ -14,7 +14,7 @@
         <hr>
         
         <a
-            href="/administrador"
+            href="/vendedor"
             class="nav-menu-item  {% if activo == 'home' %}active-link{% endif %}"
         >
             <div class="icono-left-menu-item">
@@ -29,22 +29,22 @@
         </a>
 
         <a
-            href="/administrador/usuarios"
-            class="nav-menu-item {% if activo == 'usuario' %}active-link{% endif %}"
+            href="/vendedor/ventas"
+            class="nav-menu-item {% if activo == 'pedidos' %}active-link{% endif %}"
         >
             <div class="icono-left-menu-item">
-                <i class="fas fa-user"></i>
+                <i class="fas fa-cash-register"></i>
             </div>
 
             <div class="texto-left-menu-item">
                 <label>
-                    Usuarios
+                    Mis ventas
                 </label>
             </div>
         </a>
 
         <a
-            href="/administrador/productos"
+            href="/vendedor/productos"
             class="nav-menu-item {% if activo == 'productos' %}active-link{% endif %}"
         >
             <div class="icono-left-menu-item">
@@ -54,21 +54,6 @@
             <div class="texto-left-menu-item">
                 <label>
                     Productos
-                </label>
-            </div>
-        </a>
-
-        <a
-            href="/administrador/pedidos"
-            class="nav-menu-item {% if activo == 'pedidos' %}active-link{% endif %}"
-        >
-            <div class="icono-left-menu-item">
-                <i class="fas fa-list"></i>
-            </div>
-
-            <div class="texto-left-menu-item">
-                <label>
-                    Pedidos
                 </label>
             </div>
         </a>
