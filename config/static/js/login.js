@@ -1,50 +1,67 @@
 console.log("LOGIN JS")
 
+import HTTPService from './HttpService.js';
+
 const BASE_URL = 'http://127.0.0.1:5000/api'
 
-const formData = {
-    usuario: '',
-    clave: '',
-    rol: ''
-}
+const LoginModule = (function() {
+    const formData = {
+        usuario: '',
+        clave: '',
+        rol: ''
+    };
 
-document.getElementById('login-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent default form submission
+    const httpService = new HTTPService();
 
-    // Retrieve values from form fields
-    formData.usuario = document.getElementById('username').value;
-    formData.clave = document.getElementById('password').value;
-    formData.rol = document.getElementById('rol-select').value;
+    async function handleFormSubmit(event) {
+        event.preventDefault();
 
-    // Make POST request using Axios
-    console.log('formData', formData);
+        formData.usuario = document.getElementById('username').value;
+        formData.clave = document.getElementById('password').value;
+        formData.rol = document.getElementById('rol-select').value;
 
-    try {
-        const response = await axios.post(BASE_URL + '/login', formData);
-        console.log('Login successful:', response.data);
+        // Make POST request using HTTPService
+        console.log('formData', formData);
 
-        localStorage.setItem("id_usuario", response.data.id);
-        localStorage.setItem("rol_name", formData.rol);
+        httpService.post('/login', formData, (error, data) => {
+            if (error) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Error en el login: usuario, contraseña o rol incorrecto(s)",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                return;
+            }
 
-        setTimeout(function() {
-            window.location.href = "http://127.0.0.1:5000/" + formData.rol.toLowerCase().trim();
-        }, 500);
+            console.log('Login successful:', data);
 
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Login correcto",
-            showConfirmButton: false,
-            timer: 1500
-        });
-    } catch (error) {
-        // console.error('Login failed:', error.response.data);
-        Swal.fire({
-            position: "top-end",
-            icon: "error",
-            title: "Error en el login: usuario, contraseña o rol incorrecto(s)",
-            showConfirmButton: false,
-            timer: 1500
+            localStorage.setItem("id_usuario", data.id);
+            localStorage.setItem("rol_name", formData.rol);
+
+            setTimeout(function() {
+                window.location.href = "http://127.0.0.1:5000/" + formData.rol.toLowerCase().trim();
+            }, 500);
+
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Login correcto",
+                showConfirmButton: false,
+                timer: 1500
+            });
         });
     }
-});
+
+    function init() {
+        document.getElementById('login-form').addEventListener('submit', handleFormSubmit);
+    }
+
+    return {
+        init: init
+    };
+})();
+
+// Inicializacion modulo de LOGIN
+LoginModule.init();

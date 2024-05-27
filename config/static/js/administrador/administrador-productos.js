@@ -1,3 +1,57 @@
+class ProductoComponent {
+  constructor(id, nombre, categoria, precio, stock) {
+    this.id = id;
+    this.nombre = nombre;
+    this.categoria = categoria;
+    this.precio = precio;
+    this.stock = stock;
+  }
+
+  // Métodos comunes para todos los productos y categorías
+  getNombre() {
+    return this.nombre;
+  }
+
+  getPrecio() {
+    return this.precio;
+  }
+
+  // Otros métodos comunes
+}
+
+class Producto extends ProductoComponent {
+  constructor(id, nombre, categoria, precio, stock) {
+    super(id, nombre, categoria, precio, stock);
+  }
+
+  // Puedes agregar métodos específicos de Producto si es necesario
+}
+
+class Categoria extends ProductoComponent {
+  constructor(nombre) {
+    super(null, nombre, null, null, null);
+    this.productos = [];
+  }
+
+  // Métodos para agregar, eliminar y obtener productos
+  agregarProducto(producto) {
+    this.productos.push(producto);
+  }
+
+  eliminarProducto(producto) {
+    const index = this.productos.findIndex(p => p.id === producto.id);
+    if (index !== -1) {
+      this.productos.splice(index, 1);
+    }
+  }
+
+  getProductos() {
+    return this.productos;
+  }
+
+  // Otros métodos específicos de Categoría
+}
+
 console.log("ADMINISTRADOR USUARIOS JS");
 
 const BASE_URL = "http://127.0.0.1:5000/api";
